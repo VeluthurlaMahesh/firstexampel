@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration>
+<Appenders>
+<console name="console" target="SYSTEM_OUT">
+<PatternLayout
+			pattern="%style{%d{1508601}}%highlight{%-5level }{%style{%t}{bright,blue}}%style{%c{10}}{bright,yellow}; %msg%n%throwable"/>
+	</console>
+	
+			<SplunkHttp>
+				name="SpringSplunkDemo"
+				url="http://Localhost:8088"
+				token=""
+				host="Localhost"
+				index="Spring-dev"
+				type="row"
+				source="source_name"
+				sourcetype="log4j"
+				messageformat="text""
+				disableCertificationvalidation="true">
+				<PatternLayout pattern="%m"  />
+	
+			</SplunkHttp>
+	</Appenders>
+		<loggers>
+		<root level="info">
+		<AppenderRef ref="consoe"/>
+		<AppenderRef ref="SpringSplunkDemo" />
+		</root></loggers>
+</Configuration>

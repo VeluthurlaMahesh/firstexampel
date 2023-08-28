@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>org.springframework.boot</groupId>
+		<artiactId>spring-boot-starter-parent</artiactId>
+		<version>2.7.14-SNAPSH</version>
+		<relativePath/> <!-- lookup parent from repository -->
+	</parent>
+	<groupId>com.log.example</groupId>
+	<artifactId>Productproject</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<name>Productproject</name>
+	<description>Productproject</description>
+	<properties>
+		<java.version>11</java.version>
+	</properties>
+	<repositories>
+	<repository>
+	<id>splunk-artifactory</id>
+	<name>splunk Releases</name>
+	<url>http://splunk.jforg.io/splunk/ext-release-local</url>
+	</repository>
+	</repositories>
+	<dependencies>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-web</artifactId>
+			
+			<exclusions>
+        <exclusion>
+         <groupId>org.springframework.boot</groupId>
+         <artifactId>spring-boot-starter-logging</artifactId>
+       </exclusion>
+  </exclusions>
+			
+		</dependency>
+		
+		
+	
+		<!-- https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-log4j -->
+	<dependency>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-log4j</artifactId>
+    <version>1.2.5.RELEASE</version>
+	</dependency>
+<!-- https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-logging -->
+<dependency>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-logging</artifactId>
+    <version>2.7.7</version>
+</dependency>
+<dependency>
+          <groupId>com.splunk.logging</groupId>
+           <artifactId>splunk-library-javalogging</artifactId>
+            <version>1.6.1</version>
+        <scope>runtime</scope>
+   </dependency>
+
+
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-configuration-processor</artifactId>
+			<optional>true</optional>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-test</artifactId>
+			<scope>test</scope>
+		</dependency>
+	</dependencies>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+			</plugin>
+		</plugins>
+	</build>
+
+	
+
+</project>
